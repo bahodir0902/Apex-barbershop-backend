@@ -83,7 +83,6 @@ export function BookingPage() {
   // Initialize from URL params
   React.useEffect(() => {
     const barbershopId = searchParams.get('barbershop');
-    // const barberId = searchParams.get('barber'); // Reserved for future use
 
     if (barbershopId && barbershopsData?.results) {
       const barbershop = barbershopsData.results.find(b => b.id === barbershopId);

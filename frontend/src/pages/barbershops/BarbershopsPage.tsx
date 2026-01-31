@@ -28,14 +28,16 @@ export function BarbershopsPage() {
   const [searchParams, setSearchParams] = useSearchParams();
   const [searchQuery, setSearchQuery] = React.useState(searchParams.get('search') || '');
   const [ordering, setOrdering] = React.useState(searchParams.get('ordering') || 'name');
+  const [page, setPage] = React.useState(1);
 
   const { data, isLoading, error } = useQuery({
-    queryKey: ['barbershops', { search: searchQuery, ordering }],
-    queryFn: () => barbershopService.getBarbershops({ search: searchQuery, ordering }),
+    queryKey: ['barbershops', { search: searchQuery, ordering, page }],
+    queryFn: () => barbershopService.getBarbershops({ search: searchQuery, ordering, page }),
   });
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
+    setPage(1);
     setSearchParams({ search: searchQuery, ordering });
   };
 
@@ -199,18 +201,14 @@ export function BarbershopsPage() {
               <Button
                 variant="outline"
                 disabled={!data.previous}
-                onClick={() => {
-                  // Handle previous page
-                }}
+                onClick={() => setPage(p => Math.max(1, p - 1))}
               >
                 Previous
               </Button>
               <Button
                 variant="outline"
                 disabled={!data.next}
-                onClick={() => {
-                  // Handle next page
-                }}
+                onClick={() => setPage(p => p + 1)}
               >
                 Next
               </Button>
