@@ -1,0 +1,70 @@
+# ApeX Barbershop API - Python Dependencies
+# Django REST Framework Application
+
+# Django Core
+Django>=5.1.5,<6.0
+djangorestframework>=3.16.0
+djangorestframework-simplejwt>=5.5.0
+
+# API Documentation
+drf-spectacular>=0.29.0
+
+# Database
+psycopg2-binary>=2.9.9
+
+# Authentication
+social-auth-app-django>=5.7.0
+
+# Admin
+django-unfold>=0.76.1
+
+# CORS
+django-cors-headers>=4.9.0
+
+# Filtering & Search
+django-filter>=25.0
+
+# File Cleanup
+django-cleanup>=9.0.0
+
+# Task Queue
+celery>=5.6.0
+django-celery-beat>=2.8.0
+redis>=7.1.0
+
+# Storage
+django-storages>=1.14.6
+boto3>=1.38.0
+
+# Static Files
+whitenoise>=6.11.0
+
+# Image Processing
+Pillow>=12.0.0
+
+# WSGI Server
+gunicorn>=24.1.0
+
+# Logging
+python-json-logger>=4.0.0
+structlog>=25.0.0
+
+# Utilities
+python-dateutil>=2.9.0
+
+# Testing
+pytest>=9.0.0
+pytest-django>=4.11.0
+pytest-cov>=7.0.0
+factory-boy>=3.3.0
+faker>=36.0.0
+
+# Code Quality
+ruff>=0.11.0
+black>=25.0.0
+isort>=6.0.0
+pre-commit>=4.2.0
+
+# Security
+bandit>=1.8.0
+safety>=3.5.0
